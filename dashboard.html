@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your EliteWear dashboard - manage orders, wishlist, addresses, and account settings in one place.">
+  <meta name="keywords" content="dashboard, account, orders, wishlist, elitewear profile">
+  <meta property="og:title" content="Dashboard | EliteWear">
+  <meta property="og:description" content="Manage your EliteWear account, orders, wishlist, and settings.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elitewear.com/dashboard">
+  <meta property="og:image" content="https://elitewear.com/assets/img/og-dashboard.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <title>Dashboard | EliteWear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    .dashboard-layout { display: flex; gap: 32px; align-items: flex-start; }
+    .dashboard-sidebar { width: 240px; flex-shrink: 0; position: sticky; top: 88px; }
+    .dashboard-main { flex: 1; min-width: 0; }
+    .sidebar-nav a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: var(--gray); border-radius: 10px; transition: var(--transition); font-size: 0.9rem; margin-bottom: 4px; }
+    .sidebar-nav a:hover, .sidebar-nav a.active { background: rgba(212,175,55,0.1); color: var(--gold); }
+    .sidebar-nav a.active { border-left: 3px solid var(--gold); }
+    .stats-grid-dash { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 32px; }
+    .stat-card-dash { padding: 20px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
+    .stat-card-dash .stat-value { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--gold); }
+    .stat-card-dash .stat-label { color: var(--gray); font-size: 0.8rem; margin-top: 4px; }
+    .stat-card-dash .stat-icon { font-size: 1.5rem; color: rgba(212,175,55,0.3); margin-bottom: 8px; }
+    .dashboard-section { margin-bottom: 40px; }
+    .dashboard-section h2 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 20px; }
+    .orders-table { width: 100%; border-collapse: collapse; }
+    .orders-table th { text-align: left; padding: 12px 16px; color: var(--gray); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .orders-table td { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: var(--gray-light); }
+    .orders-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .status-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+    .status-shipped { background: rgba(34,197,94,0.15); color: #22C55E; }
+    .status-processing { background: rgba(212,175,55,0.15); color: var(--gold); }
+    .status-delivered { background: rgba(59,130,246,0.15); color: #3B82F6; }
+    .status-cancelled { background: rgba(239,68,68,0.15); color: #EF4444; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; color: var(--gray); font-size: 0.85rem; margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: var(--white); font-family: var(--font-body); outline: none; transition: var(--transition); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
+    .address-card { padding: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; }
+    .address-card p { color: var(--gray); font-size: 0.85rem; margin-bottom: 4px; }
+    .address-card .actions { display: flex; gap: 8px; margin-top: 12px; }
+    .sidebar-overlay { display: none; }
+    @media (max-width: 768px) { .sidebar-overlay { display: block; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 899; opacity: 0; visibility: hidden; transition: var(--transition); } .sidebar-overlay.open { opacity: 1; visibility: visible; } .dashboard-sidebar { position: fixed; top: 72px; left: 0; bottom: 0; width: 260px; background: var(--black-2); border-right: 1px solid rgba(255,255,255,0.05); z-index: 900; transform: translateX(-100%); transition: var(--transition); padding: 24px; overflow-y: auto; } .dashboard-sidebar.open { transform: translateX(0); } .stats-grid-dash { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .stats-grid-dash { grid-template-columns: 1fr; } .dashboard-layout { flex-direction: column; } }
+    .dash-content { display: none; }
+    .dash-content.active { display: block; }
+  </style>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="EliteWear Home">EliteWear</a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+            <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+            <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+            <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+            <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+            <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+          </div>
+        </div>
+        <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+        <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-action-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="dashboard.html" class="nav-action-btn" id="userIcon" aria-label="User account"><i class="fas fa-user"></i></a>
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist"><i class="far fa-heart"></i><span class="badge wishlist-badge">0</span></a>
+        <a href="cart.html" class="nav-action-btn" aria-label="Shopping cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge">0</span></a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <div class="nav-dropdown">
+      <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+        <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+        <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+        <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+        <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+        <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+      </div>
+    </div>
+    <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+    <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+  </div>
+
+  <main role="main">
+    <div class="breadcrumb">
+      <div class="container">
+        <div class="breadcrumb-inner">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+          <span>Dashboard</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <h1 class="hero-title reveal" style="font-size:2rem;margin-bottom:4px;">Welcome back, <span data-auth-username>User</span></h1>
+        <p class="hero-subtitle reveal reveal-delay-1" style="font-size:0.95rem;">Manage your account, orders, and preferences.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="dashboard-layout">
+          <div class="sidebar-overlay" id="sidebarOverlay" onclick="dashboard.closeSidebar()"></div>
+          <aside class="dashboard-sidebar" id="dashboardSidebar" role="navigation" aria-label="Dashboard navigation">
+            <button class="btn btn-dark" style="width:100%;margin-bottom:16px;display:none;" id="sidebarCloseBtn" onclick="dashboard.closeSidebar()"><i class="fas fa-times"></i> Close Menu</button>
+            <nav class="sidebar-nav">
+              <a href="#" class="active" data-section="overview" onclick="dashboard.switchSection('overview', this)"><i class="fas fa-th-large"></i> Overview</a>
+              <a href="#" data-section="orders" onclick="dashboard.switchSection('orders', this)"><i class="fas fa-box"></i> Orders</a>
+              <a href="#" data-section="wishlist" onclick="dashboard.switchSection('wishlist', this)"><i class="far fa-heart"></i> Wishlist</a>
+              <a href="#" data-section="addresses" onclick="dashboard.switchSection('addresses', this)"><i class="fas fa-map-marker-alt"></i> Addresses</a>
+              <a href="#" data-section="payment" onclick="dashboard.switchSection('payment', this)"><i class="fas fa-credit-card"></i> Payment Methods</a>
+              <a href="#" data-section="account" onclick="dashboard.switchSection('account', this)"><i class="fas fa-user-cog"></i> Account Details</a>
+              <a href="#" data-logout style="color:var(--gray-dark);margin-top:16px;border-top:1px solid rgba(255,255,255,0.05);padding-top:16px;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+          </aside>
+
+          <div class="dashboard-main">
+            <button class="btn btn-dark mb-24" style="display:none;" id="sidebarToggle" onclick="dashboard.openSidebar()"><i class="fas fa-bars"></i> Dashboard Menu</button>
+
+            <div id="sectionOverview" class="dash-content active">
+              <div class="stats-grid-dash">
+                <div class="stat-card-dash">
+                  <div class="stat-icon"><i class="fas fa-box"></i></div>
+                  <div class="stat-value">12</div>
+                  <div class="stat-label">Total Orders</div>
+                </div>
+                <div class="stat-card-dash">
+                  <div class="stat-icon"><i class="far fa-heart"></i></div>
+                  <div class="stat-value" data-wishlist-count-main>0</div>
+                  <div class="stat-label">Wishlist Items</div>
+                </div>
+                <div class="stat-card-dash">
+                  <div class="stat-icon"><i class="fas fa-credit-card"></i></div>
+                  <div class="stat-value">3</div>
+                  <div class="stat-label">Saved Cards</div>
+                </div>
+                <div class="stat-card-dash">
+                  <div class="stat-icon"><i class="fas fa-star"></i></div>
+                  <div class="stat-value">2,450</div>
+                  <div class="stat-label">Loyalty Points</div>
+                </div>
+              </div>
+
+              <div class="dashboard-section">
+                <h2>Recent Orders</h2>
+                <div class="orders-table-wrapper">
+                  <table class="orders-table">
+                    <thead>
+                      <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0842</td>
+                        <td>Jun 28, 2025</td>
+                        <td><span class="status-badge status-shipped">Shipped</span></td>
+                        <td>$1,240.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0842')">View</button></td>
+                      </tr>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0791</td>
+                        <td>Jun 15, 2025</td>
+                        <td><span class="status-badge status-delivered">Delivered</span></td>
+                        <td>$1,890.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0791')">View</button></td>
+                      </tr>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0745</td>
+                        <td>Jun 02, 2025</td>
+                        <td><span class="status-badge status-processing">Processing</span></td>
+                        <td>$1,520.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0745')">View</button></td>
+                      </tr>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0688</td>
+                        <td>May 20, 2025</td>
+                        <td><span class="status-badge status-delivered">Delivered</span></td>
+                        <td>$750.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0688')">View</button></td>
+                      </tr>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0612</td>
+                        <td>May 05, 2025</td>
+                        <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                        <td>$1,100.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0612')">View</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div id="sectionOrders" class="dash-content">
+              <div class="dashboard-section">
+                <h2>All Orders</h2>
+                <div class="orders-table-wrapper">
+                  <table class="orders-table">
+                    <thead>
+                      <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0842</td>
+                        <td>Jun 28, 2025</td>
+                        <td><span class="status-badge status-shipped">Shipped</span></td>
+                        <td>$1,240.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0842')">View</button></td>
+                      </tr>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0791</td>
+                        <td>Jun 15, 2025</td>
+                        <td><span class="status-badge status-delivered">Delivered</span></td>
+                        <td>$1,890.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0791')">View</button></td>
+                      </tr>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0745</td>
+                        <td>Jun 02, 2025</td>
+                        <td><span class="status-badge status-processing">Processing</span></td>
+                        <td>$1,520.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0745')">View</button></td>
+                      </tr>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0688</td>
+                        <td>May 20, 2025</td>
+                        <td><span class="status-badge status-delivered">Delivered</span></td>
+                        <td>$750.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0688')">View</button></td>
+                      </tr>
+                      <tr>
+                        <td style="color:var(--gold);font-weight:600;">#EW-2025-0612</td>
+                        <td>May 05, 2025</td>
+                        <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                        <td>$1,100.00</td>
+                        <td><button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;" onclick="dashboard.viewOrder('EW-2025-0612')">View</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div id="sectionWishlist" class="dash-content">
+              <div class="dashboard-section">
+                <h2>My Wishlist</h2>
+                <div data-wishlist-items></div>
+              </div>
+            </div>
+
+            <div id="sectionAddresses" class="dash-content">
+              <div class="dashboard-section">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+                  <h2 style="margin-bottom:0;">Saved Addresses</h2>
+                  <button class="btn btn-gold" style="padding:10px 20px;font-size:0.8rem;" onclick="dashboard.showToast('Add address form opened','info')">+ Add Address</button>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                  <div class="address-card">
+                    <p><strong style="color:var(--white);">Home</strong></p>
+                    <p>Via della Spiga 25</p>
+                    <p>20121 Milan, Italy</p>
+                    <p>+39 02 1234 5678</p>
+                    <div class="actions">
+                      <button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;">Edit</button>
+                      <button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;color:#EF4444;">Delete</button>
+                    </div>
+                  </div>
+                  <div class="address-card">
+                    <p><strong style="color:var(--white);">Office</strong></p>
+                    <p>48 Avenue Montaigne</p>
+                    <p>75008 Paris, France</p>
+                    <p>+33 1 23 45 67 89</p>
+                    <div class="actions">
+                      <button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;">Edit</button>
+                      <button class="btn btn-dark" style="padding:6px 16px;font-size:0.75rem;color:#EF4444;">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="sectionPayment" class="dash-content">
+              <div class="dashboard-section">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+                  <h2 style="margin-bottom:0;">Payment Methods</h2>
+                  <button class="btn btn-gold" style="padding:10px 20px;font-size:0.8rem;" onclick="dashboard.showToast('Add card form opened','info')">+ Add Card</button>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                  <div class="address-card">
+                    <div style="font-size:2rem;color:var(--gold);margin-bottom:8px;"><i class="fab fa-cc-visa"></i></div>
+                    <p style="color:var(--white);">Visa ending in 4242</p>
+                    <p>Expires 12/27</p>
+                    <p style="font-size:0.8rem;color:var(--gold);">Default</p>
+                  </div>
+                  <div class="address-card">
+                    <div style="font-size:2rem;color:var(--gold);margin-bottom:8px;"><i class="fab fa-cc-mastercard"></i></div>
+                    <p style="color:var(--white);">Mastercard ending in 8888</p>
+                    <p>Expires 06/26</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="sectionAccount" class="dash-content">
+              <div class="dashboard-section">
+                <h2>Account Details</h2>
+                <form class="glass-card" onsubmit="event.preventDefault();dashboard.showToast('Account updated successfully','success');">
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                    <div class="form-group">
+                      <label for="dashName">Full Name</label>
+                      <input type="text" id="dashName" value="Alessandro" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                      <label for="dashEmail">Email Address</label>
+                      <input type="email" id="dashEmail" value="alessandro@example.com" placeholder="Your email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="dashPhone">Phone Number</label>
+                    <input type="tel" id="dashPhone" value="+39 02 1234 5678" placeholder="Your phone">
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                    <div class="form-group">
+                      <label for="dashPass">New Password</label>
+                      <input type="password" id="dashPass" placeholder="Leave blank to keep current">
+                    </div>
+                    <div class="form-group">
+                      <label for="dashConfirm">Confirm Password</label>
+                      <input type="password" id="dashConfirm" placeholder="Confirm new password">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-gold mt-16">Save Changes</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('orderModal').classList.remove('open')" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      <h3 class="modal-title">Order Details</h3>
+      <div id="orderDetailContent">
+        <p style="color:var(--gray);">Loading order information...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">EliteWear</a>
+          <p>Redefining modern luxury through timeless design and uncompromising craftsmanship. Each piece tells a story of elegance and excellence.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Customer Service</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="faq.html">Shipping Info</a></li>
+            <li><a href="faq.html">Returns & Exchanges</a></li>
+            <li><a href="faq.html">Order Tracking</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Newsletter</h4>
+          <p style="color:var(--gray);font-size:0.9rem;">Subscribe for exclusive access to new collections and private sales.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();main.showToast('Subscribed successfully!','success');">
+            <input type="email" placeholder="Your email address" aria-label="Email for newsletter" required>
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EliteWear. All rights reserved. Crafted with excellence.</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" aria-label="Visa"></i>
+          <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
+          <i class="fab fa-cc-amex" aria-label="American Express"></i>
+          <i class="fab fa-cc-paypal" aria-label="PayPal"></i>
+          <i class="fab fa-cc-apple-pay" aria-label="Apple Pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const dashboard = {
+      init() {
+        this.checkScreenSize();
+        window.addEventListener('resize', () => this.checkScreenSize());
+      },
+      checkScreenSize() {
+        const toggle = document.getElementById('sidebarToggle');
+        const closeBtn = document.getElementById('sidebarCloseBtn');
+        if (window.innerWidth <= 768) {
+          toggle.style.display = 'block';
+          closeBtn.style.display = 'block';
+        } else {
+          toggle.style.display = 'none';
+          closeBtn.style.display = 'none';
+        }
+      },
+      switchSection(section, link) {
+        document.querySelectorAll('.dash-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+        document.getElementById('section' + section.charAt(0).toUpperCase() + section.slice(1)).classList.add('active');
+        if (link) link.classList.add('active');
+        if (window.innerWidth <= 768) this.closeSidebar();
+      },
+      openSidebar() {
+        document.getElementById('dashboardSidebar').classList.add('open');
+        document.getElementById('sidebarOverlay').classList.add('open');
+      },
+      closeSidebar() {
+        document.getElementById('dashboardSidebar').classList.remove('open');
+        document.getElementById('sidebarOverlay').classList.remove('open');
+      },
+      viewOrder(orderId) {
+        const content = document.getElementById('orderDetailContent');
+        const details = {
+          'EW-2025-0842': { items: 'Signature Silk Blazer x1, Italian Leather Tote x1', total: '$1,240.00', status: 'Shipped', date: 'Jun 28, 2025', address: 'Via della Spiga 25, Milan' },
+          'EW-2025-0791': { items: 'Cashmere Overcoat x1', total: '$1,890.00', status: 'Delivered', date: 'Jun 15, 2025', address: 'Via della Spiga 25, Milan' }
+        };
+        const d = details[orderId] || { items: 'Various items', total: '$750.00', status: 'Unknown', date: 'N/A', address: 'N/A' };
+        content.innerHTML = `
+          <div style="display:grid;gap:12px;">
+            <p><strong style="color:var(--white);">Order:</strong> <span style="color:var(--gold);">#${orderId}</span></p>
+            <p><strong style="color:var(--white);">Date:</strong> <span style="color:var(--black-100);">${d.date}</span></p>
+            <p><strong style="color:var(--white);">Status:</strong> <span class="status-badge status-${d.status.toLowerCase()}">${d.status}</span></p>
+            <p><strong style="color:var(--white);">Items:</strong> <span style="color:var(--black-100);">${d.items}</span></p>
+            <p><strong style="color:var(--white);">Total:</strong> <span style="color:var(--gold);font-weight:700;">${d.total}</span></p>
+            <p><strong style="color:var(--white);">Shipping to:</strong> <span style="color:var(--black-100);">${d.address}</span></p>
+          </div>`;
+        document.getElementById('orderModal').classList.add('open');
+      },
+      showToast(msg, type) {
+        if (typeof main !== 'undefined' && main.showToast) {
+          main.showToast(msg, type);
+        }
+      }
+    };
+    document.addEventListener('DOMContentLoaded', () => dashboard.init());
+  </script>
+</body>
+</html>

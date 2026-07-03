@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete your purchase securely at EliteWear.">
+  <meta property="og:title" content="Checkout | EliteWear">
+  <meta property="og:description" content="Premium fashion for the discerning individual.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elitewear.com/checkout">
+  <meta property="og:image" content="https://elitewear.com/images/og-image.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>â—†</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <title>Checkout | EliteWear</title>
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="EliteWear Home">EliteWear</a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+            <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+            <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+            <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+            <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+            <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+          </div>
+        </div>
+        <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+        <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-action-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="dashboard.html" class="nav-action-btn" id="userIcon" aria-label="User account"><i class="fas fa-user"></i></a>
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist"><i class="far fa-heart"></i><span class="badge wishlist-badge">0</span></a>
+        <a href="cart.html" class="nav-action-btn" aria-label="Shopping cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge">0</span></a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <div class="nav-dropdown">
+      <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+        <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+        <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+        <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+        <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+        <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+      </div>
+    </div>
+    <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+    <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+  </div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-list">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+      <a href="cart.html">Cart</a>
+      <span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+      <span class="current">Checkout</span>
+    </div>
+  </div>
+</nav>
+
+<h1 class="page-title animate-fadeIn">Checkout</h1>
+
+<section class="checkout-section" aria-label="Checkout form">
+  <div class="container">
+    <div class="checkout-layout">
+      <div class="checkout-form animate-fadeInLeft">
+        <form id="checkout-form" novalidate>
+
+          <div class="checkout-section-block">
+            <h2 class="checkout-section-title">Shipping Address</h2>
+            <div class="form-row shipping-fields">
+              <div class="form-group half">
+                <label for="first-name" class="form-label">First Name</label>
+                <input type="text" id="first-name" class="form-input" placeholder="John" required>
+              </div>
+              <div class="form-group half">
+                <label for="last-name" class="form-label">Last Name</label>
+                <input type="text" id="last-name" class="form-input" placeholder="Doe" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" id="phone" class="form-input" placeholder="+1 (555) 000-0000" required>
+            </div>
+            <div class="form-group">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" id="address" class="form-input" placeholder="123 Luxury Avenue" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="city" class="form-label">City</label>
+                <input type="text" id="city" class="form-input" placeholder="New York" required>
+              </div>
+              <div class="form-group half">
+                <label for="state" class="form-label">State</label>
+                <input type="text" id="state" class="form-input" placeholder="NY" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="zip" class="form-label">ZIP Code</label>
+                <input type="text" id="zip" class="form-input" placeholder="10001" required>
+              </div>
+              <div class="form-group half">
+                <label for="country" class="form-label">Country</label>
+                <select id="country" class="form-select" required>
+                  <option value="">Select Country</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="AU">Australia</option>
+                  <option value="DE">Germany</option>
+                  <option value="FR">France</option>
+                  <option value="IT">Italy</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-section-block">
+            <div class="checkbox-group" style="margin-bottom:20px;">
+              <input type="checkbox" id="same-as-shipping">
+              <label for="same-as-shipping">Billing address same as shipping</label>
+            </div>
+            <div class="billing-fields">
+              <h2 class="checkout-section-title">Billing Address</h2>
+              <div class="form-row">
+                <div class="form-group half">
+                  <label for="b-first-name" class="form-label">First Name</label>
+                  <input type="text" id="b-first-name" class="form-input" placeholder="John">
+                </div>
+                <div class="form-group half">
+                  <label for="b-last-name" class="form-label">Last Name</label>
+                  <input type="text" id="b-last-name" class="form-input" placeholder="Doe">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="b-address" class="form-label">Address</label>
+                <input type="text" id="b-address" class="form-input" placeholder="123 Luxury Avenue">
+              </div>
+              <div class="form-row">
+                <div class="form-group half">
+                  <label for="b-city" class="form-label">City</label>
+                  <input type="text" id="b-city" class="form-input" placeholder="New York">
+                </div>
+                <div class="form-group half">
+                  <label for="b-state" class="form-label">State</label>
+                  <input type="text" id="b-state" class="form-input" placeholder="NY">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group half">
+                  <label for="b-zip" class="form-label">ZIP Code</label>
+                  <input type="text" id="b-zip" class="form-input" placeholder="10001">
+                </div>
+                <div class="form-group half">
+                  <label for="b-country" class="form-label">Country</label>
+                  <select id="b-country" class="form-select">
+                    <option value="">Select Country</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-section-block">
+            <h2 class="checkout-section-title">Shipping Method</h2>
+            <div class="radio-group active">
+              <input type="radio" name="shipping" id="ship-standard" value="5.99" checked>
+              <label for="ship-standard"><strong>Standard</strong> <span style="color:var(--gray-400);">(5-7 business days)</span></label>
+              <span style="font-weight:600;color:var(--gold);">$5.99</span>
+            </div>
+            <div class="radio-group">
+              <input type="radio" name="shipping" id="ship-express" value="14.99">
+              <label for="ship-express"><strong>Express</strong> <span style="color:var(--gray-400);">(2-3 business days)</span></label>
+              <span style="font-weight:600;color:var(--gold);">$14.99</span>
+            </div>
+            <div class="radio-group">
+              <input type="radio" name="shipping" id="ship-nextday" value="24.99">
+              <label for="ship-nextday"><strong>Next Day</strong> <span style="color:var(--gray-400);">(1 business day)</span></label>
+              <span style="font-weight:600;color:var(--gold);">$24.99</span>
+            </div>
+          </div>
+
+          <div class="checkout-section-block">
+            <h2 class="checkout-section-title">Payment Method</h2>
+            <div class="radio-group active">
+              <input type="radio" name="payment" id="pay-card" value="card" checked>
+              <label for="pay-card"><i class="fas fa-credit-card" style="color:var(--gold);margin-right:8px;"></i> Credit Card</label>
+            </div>
+            <div id="card-details">
+              <div class="form-group">
+                <label for="card-number" class="form-label">Card Number</label>
+                <input type="text" id="card-number" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19">
+              </div>
+              <div class="form-row">
+                <div class="form-group half">
+                  <label for="card-expiry" class="form-label">Expiry</label>
+                  <input type="text" id="card-expiry" class="form-input" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-group half">
+                  <label for="card-cvv" class="form-label">CVV</label>
+                  <input type="text" id="card-cvv" class="form-input" placeholder="123" maxlength="4">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="card-name" class="form-label">Name on Card</label>
+                <input type="text" id="card-name" class="form-input" placeholder="John Doe">
+              </div>
+            </div>
+            <div class="radio-group">
+              <input type="radio" name="payment" id="pay-paypal" value="paypal">
+              <label for="pay-paypal"><i class="fab fa-paypal" style="color:var(--gold);margin-right:8px;"></i> PayPal</label>
+            </div>
+            <div class="radio-group">
+              <input type="radio" name="payment" id="pay-apple" value="apple">
+              <label for="pay-apple"><i class="fab fa-apple-pay" style="color:var(--gold);margin-right:8px;"></i> Apple Pay</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-gold" style="width:100%;margin-top:16px;">Place Order</button>
+        </form>
+      </div>
+
+      <aside class="checkout-summary animate-fadeInRight" aria-label="Order summary">
+        <div class="glass-card" style="padding:32px;">
+          <h3 style="font-family:var(--font-heading);font-size:22px;margin-bottom:24px;">Order Summary</h3>
+
+          <div id="checkout-items" class="checkout-summary-items"></div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="checkout-subtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="checkout-shipping">$5.99</span>
+          </div>
+          <div class="summary-row">
+            <span>Discount</span>
+            <span id="checkout-discount">$0.00</span>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Total</span>
+            <span id="checkout-total">$0.00</span>
+          </div>
+
+          <div style="margin-top:20px;display:flex;gap:8px;">
+            <input type="text" id="promo-code" class="form-input" placeholder="Promo code" aria-label="Promo code">
+            <button id="apply-promo" class="btn btn-outline" style="white-space:nowrap;">Apply</button>
+          </div>
+
+          <div class="checkout-summary-badges">
+            <div><i class="fas fa-lock"></i> Secure SSL Encryption</div>
+            <div><i class="fas fa-undo-alt"></i> 30-Day Returns</div>
+            <div><i class="fas fa-shield-alt"></i> Buyer Protection</div>
+            <div><i class="fas fa-truck"></i> Free Shipping $200+</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">EliteWear</a>
+        <p>Curating the finest in luxury fashion since 2018. <br>Elevate your wardrobe with pieces that define sophistication.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#">New Arrivals</a>
+          <a href="#">Best Sellers</a>
+          <a href="#">Sale</a>
+          <a href="#">Lookbook</a>
+          <a href="about.html">About Us</a>
+        </div>
+      </div>
+      <div>
+        <h4>Customer Service</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Us</a>
+          <a href="#">Shipping & Returns</a>
+          <a href="#">Size Guide</a>
+          <a href="faq.html">FAQ</a>
+          <a href="#">Track Order</a>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Join the Circle</h4>
+        <p>Subscribe for exclusive access to new drops, early sale access, and 10% off your first order.</p>
+        <form class="newsletter-form" aria-label="Newsletter signup">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 EliteWear. All rights reserved.</p>
+      <div class="payment-methods" aria-label="Accepted payment methods">
+        <i class="fab fa-cc-visa" aria-label="Visa"></i>
+        <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
+        <i class="fab fa-cc-amex" aria-label="American Express"></i>
+        <i class="fab fa-cc-paypal" aria-label="PayPal"></i>
+        <i class="fab fa-cc-apple-pay" aria-label="Apple Pay"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/wishlist.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find answers to frequently asked questions about EliteWear - orders, shipping, returns, payments, and more.">
+  <meta name="keywords" content="faq, elitewear help, orders, shipping, returns, payment, customer support">
+  <meta property="og:title" content="FAQ | EliteWear">
+  <meta property="og:description" content="Find answers to frequently asked questions about EliteWear - orders, shipping, returns, payments, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elitewear.com/faq">
+  <meta property="og:image" content="https://elitewear.com/assets/img/og-faq.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <title>FAQ | EliteWear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="EliteWear Home">EliteWear</a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+            <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+            <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+            <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+            <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+            <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+          </div>
+        </div>
+        <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+        <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-action-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="dashboard.html" class="nav-action-btn" id="userIcon" aria-label="User account"><i class="fas fa-user"></i></a>
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist"><i class="far fa-heart"></i><span class="badge wishlist-badge">0</span></a>
+        <a href="cart.html" class="nav-action-btn" aria-label="Shopping cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge">0</span></a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <div class="nav-dropdown">
+      <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+        <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+        <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+        <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+        <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+        <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+      </div>
+    </div>
+    <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+    <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+  </div>
+
+  <main role="main">
+    <div class="breadcrumb">
+      <div class="container">
+        <div class="breadcrumb-inner">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+          <span>FAQ</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title reveal">Frequently Asked Questions</h1>
+        <div class="gold-divider"></div>
+        <p class="hero-subtitle reveal reveal-delay-1">Everything you need to know about shopping at EliteWear.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="reveal" style="max-width:600px;margin:0 auto 40px;position:relative;">
+          <i class="fas fa-search" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--gray);"></i>
+          <input type="text" id="faqSearch" placeholder="Search FAQ..." aria-label="Search frequently asked questions" style="width:100%;padding:16px 16px 16px 48px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:var(--white);font-family:var(--font-body);font-size:1rem;outline:none;transition:var(--transition);" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor=''" oninput="faq.filter(this.value)">
+        </div>
+
+        <div class="faq-tabs reveal" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;">
+          <button class="faq-tab btn btn-gold" data-category="all" onclick="faq.filterByCategory('all', this)">All</button>
+          <button class="faq-tab btn btn-dark" data-category="orders" onclick="faq.filterByCategory('orders', this)">Orders</button>
+          <button class="faq-tab btn btn-dark" data-category="shipping" onclick="faq.filterByCategory('shipping', this)">Shipping</button>
+          <button class="faq-tab btn btn-dark" data-category="returns" onclick="faq.filterByCategory('returns', this)">Returns</button>
+          <button class="faq-tab btn btn-dark" data-category="payment" onclick="faq.filterByCategory('payment', this)">Payment</button>
+          <button class="faq-tab btn btn-dark" data-category="products" onclick="faq.filterByCategory('products', this)">Products</button>
+          <button class="faq-tab btn btn-dark" data-category="account" onclick="faq.filterByCategory('account', this)">Account</button>
+        </div>
+
+        <div id="faqContainer" style="max-width:800px;margin:0 auto;">
+          <div class="faq-category" data-category="orders">
+            <h3 style="font-family:var(--font-display);color:var(--gold);margin-bottom:16px;font-size:1.2rem;"><i class="fas fa-box"></i> Orders</h3>
+            <div class="faq-item glass-card mb-16" data-search="How can I track my order?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How can I track my order?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Once your order ships, you will receive a confirmation email with a tracking number. You can also track your order by logging into your account dashboard and viewing your recent orders. International shipments may have limited tracking depending on the destination.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="Can I modify or cancel my order?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                Can I modify or cancel my order?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Orders can be modified or cancelled within 2 hours of placement. After that, the order enters processing and cannot be changed. Please contact our concierge team immediately at concierge@elitewear.com if you need to make changes.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How do I cancel my order?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How do I cancel my order?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">To cancel an order, log into your account and navigate to your orders. If the order is still within the 2-hour window, you will see a cancel option. Alternatively, contact our support team with your order number for assistance.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-category" data-category="shipping">
+            <h3 style="font-family:var(--font-display);color:var(--gold);margin:32px 0 16px;font-size:1.2rem;"><i class="fas fa-truck"></i> Shipping</h3>
+            <div class="faq-item glass-card mb-16" data-search="What are your shipping times?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                What are your shipping times?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Standard shipping takes 5-7 business days. Express shipping takes 2-3 business days. International orders typically arrive within 7-14 business days depending on customs clearance. All orders are processed within 24 hours.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How much does shipping cost?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How much does shipping cost?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">We offer complimentary express shipping on all orders over $500. Standard shipping is $15, and express shipping is $25. International shipping costs vary by destination and are calculated at checkout.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="Do you ship internationally?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                Do you ship internationally?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Yes, we ship to over 100 countries worldwide. International shipping rates and delivery times vary by destination. Please note that customers are responsible for any customs duties, taxes, or import fees applicable in their country.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How can I track my international shipment?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How can I track my international shipment?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">International shipments include tracking that can be monitored through your account dashboard. Tracking updates may be less frequent once the package leaves the originating country. Contact our support team if you have concerns about your shipment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-category" data-category="returns">
+            <h3 style="font-family:var(--font-display);color:var(--gold);margin:32px 0 16px;font-size:1.2rem;"><i class="fas fa-undo"></i> Returns</h3>
+            <div class="faq-item glass-card mb-16" data-search="What is your return policy?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                What is your return policy?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">We accept returns within 30 days of delivery. Items must be unworn, unwashed, and in their original condition with all tags attached. Final sale items, intimates, and personalized pieces cannot be returned. We provide a prepaid return label for domestic orders.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How do I start a return?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How do I start a return?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Log into your account, go to your orders, and select the item you wish to return. Follow the return instructions to generate a return label. Pack the item securely with all tags and include the return form. Drop off at any designated carrier location.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How long do refunds take?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How long do refunds take?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Refunds are processed within 5-7 business days after we receive your return. The amount will be credited to your original payment method. International returns may take longer due to customs processing.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="Can I exchange an item?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                Can I exchange an item?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">We offer exchanges for sizes only. To exchange, please initiate a return and place a new order for the desired size. This ensures the quickest processing. Contact our support team for assistance with exchanges.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-category" data-category="payment">
+            <h3 style="font-family:var(--font-display);color:var(--gold);margin:32px 0 16px;font-size:1.2rem;"><i class="fas fa-credit-card"></i> Payment</h3>
+            <div class="faq-item glass-card mb-16" data-search="What payment methods do you accept?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                What payment methods do you accept?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">We accept Visa, Mastercard, American Express, Discover, PayPal, Apple Pay, and Google Pay. We also offer buy now, pay later options through Klarna and Afterpay on qualifying orders.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="Is my payment information secure?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                Is my payment information secure?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Absolutely. EliteWear uses industry-standard SSL encryption to protect your payment information. We are PCI-DSS compliant and never store full credit card numbers on our servers. Your security is our top priority.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="Do you offer installment payments?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                Do you offer installment payments?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Yes, we offer installment payment options through Klarna (4 interest-free payments) and Afterpay (bi-weekly installments). These options are available at checkout for orders up to $5,000. Subject to approval.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="Do you sell gift cards?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                Do you sell gift cards?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Yes, EliteWear offers digital and physical gift cards in denominations from $100 to $5,000. Digital gift cards are delivered instantly via email, while physical gift cards are shipped in a premium presentation box.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-category" data-category="products">
+            <h3 style="font-family:var(--font-display);color:var(--gold);margin:32px 0 16px;font-size:1.2rem;"><i class="fas fa-tag"></i> Products</h3>
+            <div class="faq-item glass-card mb-16" data-search="How do I find my size?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How do I find my size?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Each product page includes a detailed size guide with measurements. We recommend taking your body measurements and comparing them to our size chart. If you need personalized sizing assistance, our style advisors are available via chat or email.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="Are your products authentic?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                Are your products authentic?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Every product on EliteWear is 100% authentic. We source directly from premium manufacturers and authorized distributors. Each item comes with a certificate of authenticity where applicable. We stand behind the quality and authenticity of every piece.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How should I care for my garments?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How should I care for my garments?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Each garment includes a care label with specific instructions. Generally, we recommend dry cleaning for tailored pieces, hand washing for delicate fabrics, and storing items in a cool, dry place. Follow the care instructions to maintain your garment's quality.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-category" data-category="account">
+            <h3 style="font-family:var(--font-display);color:var(--gold);margin:32px 0 16px;font-size:1.2rem;"><i class="fas fa-user"></i> Account</h3>
+            <div class="faq-item glass-card mb-16" data-search="How do I create an account?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How do I create an account?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Click on the user icon in the top right corner and select "Create Account." Fill in your name, email address, and a secure password. You can also create an account during checkout. Once registered, you can access your dashboard, track orders, and manage your preferences.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How do I reset my password?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How do I reset my password?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">On the login page, click "Forgot Password." Enter your email address, and we will send you a password reset link. The link expires within 24 hours. If you do not receive the email, please check your spam folder or contact support.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How do I update my profile?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How do I update my profile?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Log into your account and navigate to the Account Details section in your dashboard. Here you can update your name, email address, phone number, and password. Save your changes before leaving the page.</p>
+              </div>
+            </div>
+            <div class="faq-item glass-card mb-16" data-search="How do I unsubscribe from the newsletter?">
+              <button onclick="faq.toggle(this)" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+                How do I unsubscribe from the newsletter?
+                <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+              </button>
+              <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+                <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">You can unsubscribe at any time by clicking the "Unsubscribe" link at the bottom of any marketing email. You can also update your communication preferences in your account settings under Notification Preferences.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">EliteWear</a>
+          <p>Redefining modern luxury through timeless design and uncompromising craftsmanship. Each piece tells a story of elegance and excellence.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Customer Service</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="faq.html">Shipping Info</a></li>
+            <li><a href="faq.html">Returns & Exchanges</a></li>
+            <li><a href="faq.html">Order Tracking</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Newsletter</h4>
+          <p style="color:var(--gray);font-size:0.9rem;">Subscribe for exclusive access to new collections and private sales.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();main.showToast('Subscribed successfully!','success');">
+            <input type="email" placeholder="Your email address" aria-label="Email for newsletter" required>
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EliteWear. All rights reserved. Crafted with excellence.</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" aria-label="Visa"></i>
+          <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
+          <i class="fab fa-cc-amex" aria-label="American Express"></i>
+          <i class="fab fa-cc-paypal" aria-label="PayPal"></i>
+          <i class="fab fa-cc-apple-pay" aria-label="Apple Pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const faq = {
+      toggle(btn) {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const icon = btn.querySelector('i');
+        const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+        answer.style.maxHeight = isOpen ? '0' : answer.scrollHeight + 'px';
+        icon.classList.toggle('fa-chevron-up');
+        btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      },
+      filterByCategory(category, btn) {
+        document.querySelectorAll('.faq-tab').forEach(t => t.className = 'faq-tab btn btn-dark');
+        btn.className = 'faq-tab btn btn-gold';
+        document.querySelectorAll('.faq-category').forEach(c => {
+          c.style.display = (category === 'all' || c.dataset.category === category) ? 'block' : 'none';
+        });
+      },
+      filter(query) {
+        const q = query.toLowerCase();
+        document.querySelectorAll('.faq-item').forEach(item => {
+          const searchText = item.dataset.search.toLowerCase();
+          const match = !q || searchText.includes(q);
+          item.style.display = match ? 'block' : 'none';
+        });
+        document.querySelectorAll('.faq-category').forEach(cat => {
+          const visible = Array.from(cat.querySelectorAll('.faq-item')).some(item => item.style.display !== 'none');
+          cat.style.display = visible ? 'block' : 'none';
+        });
+      }
+    };
+    document.querySelectorAll('[aria-expanded]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+        this.setAttribute('aria-expanded', expanded);
+      });
+    });
+  </script>
+</body>
+</html>

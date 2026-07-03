@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with EliteWear. Visit our showrooms, send us a message, or find answers to your questions.">
+  <meta name="keywords" content="contact elitewear, customer service, showroom locations, luxury fashion contact">
+  <meta property="og:title" content="Contact Us | EliteWear">
+  <meta property="og:description" content="Get in touch with EliteWear. Visit our showrooms, send us a message, or find answers to your questions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elitewear.com/contact">
+  <meta property="og:image" content="https://elitewear.com/assets/img/og-contact.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <title>Contact Us | EliteWear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="EliteWear Home">EliteWear</a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+            <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+            <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+            <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+            <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+            <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+          </div>
+        </div>
+        <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+        <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-action-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="dashboard.html" class="nav-action-btn" id="userIcon" aria-label="User account"><i class="fas fa-user"></i></a>
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist"><i class="far fa-heart"></i><span class="badge wishlist-badge">0</span></a>
+        <a href="cart.html" class="nav-action-btn" aria-label="Shopping cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge">0</span></a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <div class="nav-dropdown">
+      <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+        <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+        <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+        <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+        <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+        <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+      </div>
+    </div>
+    <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+    <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+  </div>
+
+  <main role="main">
+    <div class="breadcrumb">
+      <div class="container">
+        <div class="breadcrumb-inner">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+          <span>Contact</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title reveal">Get in Touch</h1>
+        <div class="gold-divider"></div>
+        <p class="hero-subtitle reveal reveal-delay-1">We would love to hear from you. Reach out for inquiries, assistance, or just to say hello.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid" style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;">
+          <div class="reveal">
+            <form id="contactForm" class="glass-card" onsubmit="event.preventDefault();main.showToast('Message sent successfully! We will get back to you within 24 hours.','success');this.reset();">
+              <h3 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:24px;">Send a Message</h3>
+              <div style="display:grid;gap:16px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                  <div>
+                    <label for="contactName" style="display:block;color:var(--gray);font-size:0.85rem;margin-bottom:6px;">Full Name</label>
+                    <input type="text" id="contactName" name="name" required placeholder="John Doe" style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--white);font-family:var(--font-body);outline:none;transition:var(--transition);" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor=''">
+                  </div>
+                  <div>
+                    <label for="contactEmail" style="display:block;color:var(--gray);font-size:0.85rem;margin-bottom:6px;">Email Address</label>
+                    <input type="email" id="contactEmail" name="email" required placeholder="john@example.com" style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--white);font-family:var(--font-body);outline:none;transition:var(--transition);" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor=''">
+                  </div>
+                </div>
+                <div>
+                  <label for="contactSubject" style="display:block;color:var(--gray);font-size:0.85rem;margin-bottom:6px;">Subject</label>
+                  <select id="contactSubject" name="subject" style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--white);font-family:var(--font-body);outline:none;transition:var(--transition);" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor=''">
+                    <option value="general" style="background:var(--black-2);">General Inquiry</option>
+                    <option value="orders" style="background:var(--black-2);">Order Support</option>
+                    <option value="returns" style="background:var(--black-2);">Returns & Exchanges</option>
+                    <option value="wholesale" style="background:var(--black-2);">Wholesale</option>
+                    <option value="press" style="background:var(--black-2);">Press & Media</option>
+                    <option value="other" style="background:var(--black-2);">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="contactMessage" style="display:block;color:var(--gray);font-size:0.85rem;margin-bottom:6px;">Message</label>
+                  <textarea id="contactMessage" name="message" rows="5" required placeholder="Tell us how we can help..." style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--white);font-family:var(--font-body);outline:none;resize:vertical;transition:var(--transition);" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor=''"></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold" style="width:fit-content;">Send Message <i class="fas fa-paper-plane"></i></button>
+              </div>
+            </form>
+          </div>
+
+          <div>
+            <div class="reveal reveal-delay-1">
+              <h3 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:24px;">Contact Information</h3>
+              <div style="display:grid;gap:16px;">
+                <div class="glass-card" style="padding:20px;display:flex;align-items:flex-start;gap:16px;">
+                  <div style="width:44px;height:44px;border-radius:50%;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;"><i class="fas fa-map-marker-alt"></i></div>
+                  <div>
+                    <h4 style="font-size:0.95rem;margin-bottom:4px;">Our Address</h4>
+                    <p style="color:var(--gray);font-size:0.85rem;">Via della Spiga 25, 20121 Milan, Italy</p>
+                  </div>
+                </div>
+                <div class="glass-card" style="padding:20px;display:flex;align-items:flex-start;gap:16px;">
+                  <div style="width:44px;height:44px;border-radius:50%;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;"><i class="fas fa-phone-alt"></i></div>
+                  <div>
+                    <h4 style="font-size:0.95rem;margin-bottom:4px;">Phone</h4>
+                    <p style="color:var(--gray);font-size:0.85rem;">+39 02 1234 5678</p>
+                    <p style="color:var(--gray);font-size:0.8rem;">Mon-Fri, 9:00 AM - 6:00 PM CET</p>
+                  </div>
+                </div>
+                <div class="glass-card" style="padding:20px;display:flex;align-items:flex-start;gap:16px;">
+                  <div style="width:44px;height:44px;border-radius:50%;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;"><i class="fas fa-envelope"></i></div>
+                  <div>
+                    <h4 style="font-size:0.95rem;margin-bottom:4px;">Email</h4>
+                    <p style="color:var(--gray);font-size:0.85rem;">concierge@elitewear.com</p>
+                  </div>
+                </div>
+                <div class="glass-card" style="padding:20px;display:flex;align-items:flex-start;gap:16px;">
+                  <div style="width:44px;height:44px;border-radius:50%;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;"><i class="fas fa-clock"></i></div>
+                  <div>
+                    <h4 style="font-size:0.95rem;margin-bottom:4px;">Business Hours</h4>
+                    <p style="color:var(--gray);font-size:0.85rem;">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p style="color:var(--gray);font-size:0.85rem;">Saturday: 10:00 AM - 4:00 PM</p>
+                    <p style="color:var(--gray);font-size:0.85rem;">Sunday: Closed</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:rgba(212,175,55,0.02);">
+      <div class="container">
+        <h2 class="section-title reveal">Our Showrooms</h2>
+        <div class="gold-divider"></div>
+        <div class="store-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+          <div class="glass-card reveal">
+            <div style="width:100%;height:200px;background:rgba(212,175,55,0.05);border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;color:var(--gray-dark);font-size:0.9rem;"><i class="fas fa-map-marked-alt" style="font-size:2rem;margin-right:8px;"></i> Milan Flagship</div>
+            <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:4px;">Milan Flagship</h3>
+            <p style="color:var(--gray);font-size:0.85rem;">Via della Spiga 25, 20121 Milan</p>
+            <p style="color:var(--gray);font-size:0.8rem;margin-top:8px;">Our original atelier and flagship boutique in the heart of Milan's fashion district.</p>
+          </div>
+          <div class="glass-card reveal reveal-delay-1">
+            <div style="width:100%;height:200px;background:rgba(212,175,55,0.05);border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;color:var(--gray-dark);font-size:0.9rem;"><i class="fas fa-map-marked-alt" style="font-size:2rem;margin-right:8px;"></i> Paris Boutique</div>
+            <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:4px;">Paris Boutique</h3>
+            <p style="color:var(--gray);font-size:0.85rem;">48 Avenue Montaigne, 75008 Paris</p>
+            <p style="color:var(--gray);font-size:0.8rem;margin-top:8px;">Elegant showroom on one of the most prestigious avenues in Paris.</p>
+          </div>
+          <div class="glass-card reveal reveal-delay-2">
+            <div style="width:100%;height:200px;background:rgba(212,175,55,0.05);border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;color:var(--gray-dark);font-size:0.9rem;"><i class="fas fa-map-marked-alt" style="font-size:2rem;margin-right:8px;"></i> New York Studio</div>
+            <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:4px;">New York Studio</h3>
+            <p style="color:var(--gray);font-size:0.85rem;">745 Fifth Avenue, Suite 1200, New York, NY 10022</p>
+            <p style="color:var(--gray);font-size:0.8rem;margin-top:8px;">Our American flagship offering the full EliteWear experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Frequently Asked Questions</h2>
+        <div class="gold-divider"></div>
+        <div style="max-width:700px;margin:0 auto;">
+          <div class="glass-card reveal mb-16">
+            <button onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open');this.querySelector('i').classList.toggle('fa-chevron-up')" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+              What is your shipping policy?
+              <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+            </button>
+            <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+              <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">We offer complimentary express shipping on all orders over $500. Standard shipping is $15 and takes 5-7 business days. Express shipping is $25 and takes 2-3 business days. International shipping rates vary by destination.</p>
+            </div>
+          </div>
+          <div class="glass-card reveal reveal-delay-1 mb-16">
+            <button onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open');this.querySelector('i').classList.toggle('fa-chevron-up')" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+              What is your return policy?
+              <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+            </button>
+            <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+              <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">We accept returns within 30 days of delivery. Items must be unworn, unwashed, and in original packaging with tags attached. We provide a prepaid return label for domestic returns. Refunds are processed within 5-7 business days.</p>
+            </div>
+          </div>
+          <div class="glass-card reveal reveal-delay-2">
+            <button onclick="this.parentElement.querySelector('.faq-answer').classList.toggle('open');this.querySelector('i').classList.toggle('fa-chevron-up')" style="background:none;border:none;color:var(--white);font-size:1rem;font-weight:600;cursor:pointer;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-family:var(--font-body);" aria-expanded="false">
+              How can I track my order?
+              <i class="fas fa-chevron-down" style="color:var(--gold);transition:var(--transition);"></i>
+            </button>
+            <div class="faq-answer" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;">
+              <p style="color:var(--gray);font-size:0.9rem;padding-top:16px;line-height:1.7;">Once your order ships, you will receive a confirmation email with a tracking number. You can track your order through your account dashboard or using the tracking link provided in the email.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-32">
+          <a href="faq.html" class="btn btn-outline">View All FAQs</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:rgba(212,175,55,0.02);">
+      <div class="container text-center">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:16px;">Follow Us</h3>
+        <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+          <a href="#" class="social-link" style="width:56px;height:56px;font-size:1.4rem;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" style="width:56px;height:56px;font-size:1.4rem;" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" style="width:56px;height:56px;font-size:1.4rem;" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" style="width:56px;height:56px;font-size:1.4rem;" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="social-link" style="width:56px;height:56px;font-size:1.4rem;" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" style="width:56px;height:56px;font-size:1.4rem;" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">EliteWear</a>
+          <p>Redefining modern luxury through timeless design and uncompromising craftsmanship. Each piece tells a story of elegance and excellence.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Customer Service</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="faq.html">Shipping Info</a></li>
+            <li><a href="faq.html">Returns & Exchanges</a></li>
+            <li><a href="faq.html">Order Tracking</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Newsletter</h4>
+          <p style="color:var(--gray);font-size:0.9rem;">Subscribe for exclusive access to new collections and private sales.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();main.showToast('Subscribed successfully!','success');">
+            <input type="email" placeholder="Your email address" aria-label="Email for newsletter" required>
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EliteWear. All rights reserved. Crafted with excellence.</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" aria-label="Visa"></i>
+          <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
+          <i class="fab fa-cc-amex" aria-label="American Express"></i>
+          <i class="fab fa-cc-paypal" aria-label="PayPal"></i>
+          <i class="fab fa-cc-apple-pay" aria-label="Apple Pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('[aria-expanded]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+        this.setAttribute('aria-expanded', expanded);
+      });
+    });
+  </script>
+</body>
+</html>

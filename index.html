@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EliteWear - Premium fashion e-commerce platform offering luxury clothing, accessories, and footwear for men, women, and kids. Discover timeless elegance.">
+  <meta name="keywords" content="luxury fashion, premium clothing, designer wear, men fashion, women fashion, kids fashion, elite wear">
+  <meta property="og:title" content="EliteWear - Premium Fashion">
+  <meta property="og:description" content="Discover timeless elegance with EliteWear. Luxury fashion for men, women, and kids.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elitewear.com">
+  <meta property="og:image" content="https://elitewear.com/og-image.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23D4AF37'>E</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <title>EliteWear - Premium Fashion</title>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="EliteWear Home">EliteWear</a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+            <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+            <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+            <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+            <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+            <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+          </div>
+        </div>
+        <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+        <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-action-btn" onclick="document.querySelector('.header-inner .nav-actions form')?.querySelector('input')?.focus()" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="login.html" class="nav-action-btn" id="userIcon" aria-label="User account"><i class="fas fa-user"></i></a>
+        <a href="wishlist.html" class="nav-action-btn" aria-label="Wishlist"><i class="far fa-heart"></i><span class="badge wishlist-badge">0</span></a>
+        <a href="cart.html" class="nav-action-btn" aria-label="Shopping cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge">0</span></a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay"></div>
+  <div class="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <div class="nav-dropdown">
+      <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:4px"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="shop.html?category=men" class="nav-dropdown-item">Men</a>
+        <a href="shop.html?category=women" class="nav-dropdown-item">Women</a>
+        <a href="shop.html?category=kids" class="nav-dropdown-item">Kids</a>
+        <a href="shop.html?filter=new" class="nav-dropdown-item">New Collection</a>
+        <a href="shop.html?filter=trending" class="nav-dropdown-item">Best Sellers</a>
+        <a href="shop.html?filter=sale" class="nav-dropdown-item">Sale</a>
+      </div>
+    </div>
+    <a href="shop.html?filter=new" class="nav-link">New Collection</a>
+    <a href="shop.html?filter=sale" class="nav-link">Sale</a>
+  </div>
+
+  <main role="main">
+    <section class="hero-slider" aria-label="Featured promotions">
+      <div class="hero-slide active">
+        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600')"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+          <p class="hero-slide-subtitle">New Collection</p>
+          <h1 class="hero-slide-title">Defining <span class="gold-text">Elegance</span></h1>
+          <p class="hero-slide-desc">Discover our latest collection of premium fashion pieces crafted for the discerning individual.</p>
+          <div class="hero-slide-actions">
+            <a href="shop.html?filter=new" class="btn btn-primary">Explore Now</a>
+            <a href="shop.html" class="btn btn-outline">View All</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600')"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+          <p class="hero-slide-subtitle">Summer Sale</p>
+          <h1 class="hero-slide-title">Up to <span class="gold-text">30% Off</span></h1>
+          <p class="hero-slide-desc">Refresh your wardrobe with our summer essentials at exclusive prices. Limited time offer.</p>
+          <div class="hero-slide-actions">
+            <a href="shop.html?filter=sale" class="btn btn-primary">Shop Sale</a>
+            <a href="shop.html" class="btn btn-outline">Browse All</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1600')"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+          <p class="hero-slide-subtitle">Premium Fashion</p>
+          <h1 class="hero-slide-title">Timeless <span class="gold-text">Luxury</span></h1>
+          <p class="hero-slide-desc">Handpicked pieces from the world's finest designers. Elevate your style today.</p>
+          <div class="hero-slide-actions">
+            <a href="shop.html?filter=featured" class="btn btn-primary">Discover</a>
+            <a href="shop.html" class="btn btn-outline">Collection</a>
+          </div>
+        </div>
+      </div>
+      <button class="hero-nav hero-nav-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+      <button class="hero-nav hero-nav-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+      <div class="hero-dots" role="tablist">
+        <button class="hero-dot active" role="tab" aria-label="Slide 1"></button>
+        <button class="hero-dot" role="tab" aria-label="Slide 2"></button>
+        <button class="hero-dot" role="tab" aria-label="Slide 3"></button>
+      </div>
+    </section>
+
+    <section class="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <h2 class="section-title" id="categories-title">Shop by Category</h2>
+        <div class="section-divider"></div>
+        <div class="category-grid">
+          <a href="shop.html?category=men" class="category-card" aria-label="Men's collection">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924d8005cd?w=600" alt="Men's fashion" loading="lazy">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Men</h3>
+              <span class="category-card-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="shop.html?category=women" class="category-card" aria-label="Women's collection">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600" alt="Women's fashion" loading="lazy">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Women</h3>
+              <span class="category-card-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="shop.html?category=kids" class="category-card" aria-label="Kids' collection">
+            <img src="https://images.unsplash.com/photo-1622296089863-eb7fc530daa9?w=600" alt="Kids' fashion" loading="lazy">
+            <div class="category-card-overlay">
+              <h3 class="category-card-title">Kids</h3>
+              <span class="category-card-link">Explore <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-products" aria-labelledby="trending-title">
+      <div class="container">
+        <h2 class="section-title" id="trending-title">Trending Now</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Most sought-after pieces this season</p>
+        <div class="products-grid trending-products" data-filter="trending" data-limit="8"></div>
+        <div style="text-align:center;margin-top:40px">
+          <a href="shop.html?filter=trending" class="btn btn-outline">View All Trending</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="new-arrivals alt-bg" aria-labelledby="new-title">
+      <div class="container">
+        <h2 class="section-title" id="new-title">New Arrivals</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">The latest additions to our collection</p>
+        <div class="products-grid new-products" data-filter="new" data-limit="8"></div>
+        <div style="text-align:center;margin-top:40px">
+          <a href="shop.html?filter=new" class="btn btn-outline">Discover New Arrivals</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sale-section" aria-labelledby="sale-title">
+      <div class="container">
+        <div class="sale-content">
+          <span class="sale-badge"><i class="fas fa-bolt"></i> Limited Time Offer</span>
+          <h2 class="sale-title" id="sale-title">Flash <span class="gold-text">Sale</span></h2>
+          <p class="sale-desc">Up to 30% off on selected premium items. Don't miss out on these exclusive deals.</p>
+          <div class="countdown">
+            <div class="countdown-item"><span class="countdown-number" id="countdown-days">00</span><span class="countdown-label">Days</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="countdown-hours">00</span><span class="countdown-label">Hours</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="countdown-minutes">00</span><span class="countdown-label">Minutes</span></div>
+            <div class="countdown-item"><span class="countdown-number" id="countdown-seconds">00</span><span class="countdown-label">Seconds</span></div>
+          </div>
+          <div class="products-grid sale-products" data-filter="sale" data-limit="4"></div>
+          <div style="text-align:center;margin-top:40px">
+            <a href="shop.html?filter=sale" class="btn btn-primary">Shop All Sale</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-strip" aria-label="Brand partners">
+      <div class="brand-strip-inner">
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+        <div class="brand-item"><img src="https://via.placeholder.com/120x40/333/666?text=BRAND" alt="Brand"></div>
+      </div>
+    </section>
+
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <h2 class="section-title" id="testimonials-title">What Our Clients Say</h2>
+        <div class="section-divider"></div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">"The quality of EliteWear's pieces is unmatched. Every item feels like it was made just for me. Truly a premium experience."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Alexander D." class="testimonial-avatar" loading="lazy">
+              <div><div class="testimonial-name">Alexander D.</div><div class="testimonial-role">CEO, Meridian Group</div></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">"I've never experienced such attention to detail. The fabrics, the stitching, the fit â€” everything is perfection. My go-to for luxury fashion."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Victoria S." class="testimonial-avatar" loading="lazy">
+              <div><div class="testimonial-name">Victoria S.</div><div class="testimonial-role">Fashion Influencer</div></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testimonial-text">"Exceptional customer service and even more exceptional products. The cashmere collection is absolutely divine. Highly recommended."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Marcus W." class="testimonial-avatar" loading="lazy">
+              <div><div class="testimonial-name">Marcus W.</div><div class="testimonial-role">Style Editor, Vogue</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section" aria-labelledby="newsletter-title">
+      <div class="container">
+        <h2 class="newsletter-title" id="newsletter-title">Join the <span class="gold-text">Elite</span></h2>
+        <p class="newsletter-desc">Subscribe to receive exclusive offers, early access to new collections, and personalized style inspiration.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thank you for subscribing!');this.reset()">
+          <input type="email" placeholder="Enter your email address" required aria-label="Email for newsletter">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="features-bar" aria-label="Features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-truck"></i></div><h3 class="feature-title">Free Shipping</h3><p class="feature-desc">On orders over $200</p></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-undo"></i></div><h3 class="feature-title">Easy Returns</h3><p class="feature-desc">30-day return policy</p></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h3 class="feature-title">Secure Payment</h3><p class="feature-desc">100% secure checkout</p></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3 class="feature-title">24/7 Support</h3><p class="feature-desc">Dedicated customer care</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">EliteWear</a>
+          <p class="footer-brand-desc">Curating timeless elegance since 2020. EliteWear brings you the finest in premium fashion, carefully selected from the world's most prestigious designers.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?filter=new">New Arrivals</a></li>
+            <li><a href="shop.html?filter=trending">Best Sellers</a></li>
+            <li><a href="shop.html?filter=sale">Sale</a></li>
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=kids">Kids</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Customer Service</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p>Be the first to know about new collections and exclusive offers.</p>
+          <form style="display:flex;gap:8px;margin-top:12px" onsubmit="event.preventDefault();alert('Thank you for subscribing!');this.reset()">
+            <input type="email" placeholder="Your email" style="flex:1;padding:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:var(--white);font-size:0.85rem" required aria-label="Email for footer newsletter">
+            <button type="submit" style="padding:12px 20px;background:var(--gold);color:var(--black);border:none;border-radius:6px;font-weight:600"><i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-payment">
+        <div class="footer-payment-icons">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-amex" title="American Express"></i>
+          <i class="fab fa-cc-paypal" title="PayPal"></i>
+          <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+        </div>
+        <p class="footer-copyright">&copy; 2026 EliteWear. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/wishlist.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
